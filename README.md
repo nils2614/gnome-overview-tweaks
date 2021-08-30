@@ -1,5 +1,5 @@
 # GNOME Overview Tweaks
-A super simple GNOME extension that hiddes the search box and adds always visible workspace thumbnails with 8% scale to the overview.
+A super simple GNOME extension that hides the search box and adds always visible workspace thumbnails with 8% scale to the overview.
 
 This extension doesn't provide a settings panel as it's mainly intended for personal use in an "activate it and forget about it" way with my ideal values hardcoded in to keep it as simple as possible. But maybe that's exactly what someone else is looking for as well :)
 

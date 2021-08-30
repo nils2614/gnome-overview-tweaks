@@ -1,5 +1,5 @@
 {
-  "description": "Hiddes the search box and adds always visible workspace thumbnails with 8% scale",
+  "description": "Hides the search box and adds always visible workspace thumbnails with 8% scale",
   "name": "Overview Tweaks",
   "shell-version": [
     "40",

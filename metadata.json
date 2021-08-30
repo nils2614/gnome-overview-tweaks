@@ -1,0 +1,11 @@
+{
+  "description": "Hiddes the search box and adds always visible workspace thumbnails with 8% scale",
+  "name": "Overview Tweaks",
+  "shell-version": [
+    "40",
+    "41"
+  ],
+  "url": "",
+  "uuid": "gnome-overview-tweaks@offermann.xyz",
+  "version": 1
+}

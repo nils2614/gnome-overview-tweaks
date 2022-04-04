@@ -3,9 +3,10 @@
   "name": "Overview Tweaks",
   "shell-version": [
     "40",
-    "41"
+    "41",
+    "42"
   ],
   "url": "https://github.com/nilsoffermann/gnome-overview-tweaks",
   "uuid": "gnome-overview-tweaks@offermann.xyz",
-  "version": 1
+  "version": 2
 }

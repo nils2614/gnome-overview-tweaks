@@ -1,7 +1,6 @@
 const Main = imports.ui.main;
 const ThumbnailsBox = imports.ui.workspaceThumbnail.ThumbnailsBox
 const workspaceThumbnail = imports.ui.workspaceThumbnail
-const SecondaryMonitorDisplay = imports.ui.workspacesView.SecondaryMonitorDisplay
 
 
 function enable () {
@@ -29,24 +28,9 @@ function enable () {
     }
   }
 
-// Increases the workspace thumbnail size to 0.09
-  // Thumbnails on main monitor
+// Increases the workspace thumbnail size to 0.08
   this.bkp_MAX_THUMBNAIL_SCALE = workspaceThumbnail.MAX_THUMBNAIL_SCALE
   workspaceThumbnail.MAX_THUMBNAIL_SCALE = 0.08
-
-  // Thumbnails on second monitor
-  this.bkp_SecondaryMonitorDisplay_getThumbnailsHeight = SecondaryMonitorDisplay.prototype._getThumbnailsHeight
-  SecondaryMonitorDisplay.prototype._getThumbnailsHeight = function(box) {
-    if (!this._thumbnails.visible)
-      return 0;
-
-    const [width, height] = box.get_size();
-    const { expandFraction } = this._thumbnails;
-    const [thumbnailsHeight] = this._thumbnails.get_preferred_height(width);
-    return Math.min(
-      thumbnailsHeight * expandFraction,
-      height * workspaceThumbnail.MAX_THUMBNAIL_SCALE);
-  }
 }
 
 function disable () {
@@ -54,19 +38,15 @@ function disable () {
   if (this.connectedId) {
     this.c.searchController.disconnect(this.connectedId)
   }
-
   this.c.searchEntry.show()
+  
 // Undo - Makes the workspace thumbnails always visible
   if (this.bkp) {
     ThumbnailsBox.prototype._updateShouldShow = this.bkp
   }
         
-// Undo - Increases the workspace thumbnail size to 0.09
+// Undo - Increases the workspace thumbnail size to 0.08
   if (this.bkp_MAX_THUMBNAIL_SCALE) {
     workspaceThumbnail.MAX_THUMBNAIL_SCALE = this.bkp_MAX_THUMBNAIL_SCALE
-  }
-
-  if (this.bkp_SecondaryMonitorDisplay_getThumbnailsHeight) {
-    SecondaryMonitorDisplay.prototype._getThumbnailsHeight = this.bkp_SecondaryMonitorDisplay_getThumbnailsHeight
   }
 }

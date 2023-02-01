@@ -4,7 +4,8 @@
   "shell-version": [
     "40",
     "41",
-    "42"
+    "42",
+    "43"
   ],
   "url": "https://github.com/nilsoffermann/gnome-overview-tweaks",
   "uuid": "gnome-overview-tweaks@offermann.xyz",
